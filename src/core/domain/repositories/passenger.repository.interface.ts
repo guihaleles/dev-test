@@ -1,9 +1,4 @@
-import { Passenger } from '../entities/passenger.entity';
+import { Passenger } from "../entities/passenger.entity";
+import { IUserRepository } from "./user.repository.interface";
 
-export interface PassengerRepository {
-  save(passenger: Passenger): Promise<void>;
-  findById(id: string): Promise<Passenger | null>;
-  findAll(): Promise<Passenger[]>;
-  delete(id: string): Promise<void>;
-  update(passenger: Passenger): Promise<void>;
-}
+export interface IPassengerRepository extends IUserRepository<Passenger> {}

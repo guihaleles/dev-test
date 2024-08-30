@@ -1,26 +1,18 @@
-import { DriverId } from '../value-objects/driver-id.vo';
 
-export class Driver {
+import { UserId } from '../value-objects/id.vo';
+import { User } from './user.entity';
+
+export class Driver extends User {
   constructor(
-    private readonly id: DriverId,
-    private readonly name: string,
-    private readonly birthDate: Date,
-    private readonly cpf: string,
-  ) {}
+      protected readonly id: UserId,
+      protected readonly name: string,
+      protected readonly birthDate: Date,
+      protected readonly cpf: string,
+      protected readonly gender: string,
+      protected readonly address: string,
+  ) {
+      super(id, name, birthDate, cpf, gender, address);
+  }
 
-    getId(): DriverId {
-        return this.id;
-    }
-
-    getName(): string {
-        return this.name;
-    }
-
-    getBirthDate(): Date {
-        return this.birthDate;
-    }
-
-    getCPF(): string {
-        return this.cpf;
-    }
+   
 }

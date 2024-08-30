@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 
-export class DriverId {
+export class UserId {
   private readonly value: string;
 
   constructor(value?: string) {

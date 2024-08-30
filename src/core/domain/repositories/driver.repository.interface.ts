@@ -1,9 +1,4 @@
 import { Driver } from '../entities/driver.entity';
+import { IUserRepository } from './user.repository.interface';
 
-export interface DriverRepository {
-    save(driver: Driver): Promise<void>;
-    findById(id: string): Promise<Driver | null>;
-    findAll(): Promise<Driver[]>;
-    delete(id: string): Promise<void>;
-    update(driver: Driver): Promise<void>;
-}
+export interface IDriverRepository extends IUserRepository<Driver> {}

@@ -1,26 +1,18 @@
-import { PassengerId } from "../value-objects/passenger-id.vo";
 
-export class Passenger {
-    constructor(
-      private readonly id: PassengerId,
-      private readonly name: string,
-      private readonly birthDate: Date,
-      private readonly cpf: string
-    ) {}
-  
-    getId(): PassengerId {
-      return this.id;
-    }
-  
-    getName(): string {
-      return this.name;
-    }
-  
-    getBirthDate(): Date {
-      return this.birthDate;
-    }
+import { UserId } from '../value-objects/id.vo';
+import { User } from './user.entity';
 
-    getCPF(): string {
-      return this.cpf;
-    }
+export class Passenger extends User {
+  constructor(
+      protected readonly id: UserId,
+      protected readonly name: string,
+      protected readonly birthDate: Date,
+      protected readonly cpf: string,
+      protected readonly gender: string,
+      protected readonly address: string,
+  ) {
+      super(id, name, birthDate, cpf, gender, address);
   }
+
+   
+}
